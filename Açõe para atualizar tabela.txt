@@ -1,0 +1,12 @@
+Para atualizar novos colaboradores teremos que ajustar o excel em .csv com
+as respectivas colunas e alterar no código o novo arquivo que será feito o
+upload.
+
+Alterar Chave Estrangeira da tabela Funcionario:
+	ALTER TABLE `funcionario` DROP CONSTRAINT `nome_da_linha`
+
+Após feito o upload ter que alterar na tabela adicionando os ForeingKey
+	ALTER TABLE `funcionario`
+  	ADD PRIMARY KEY (`id`),
+	ADD UNIQUE KEY `cpf` (`cpf`),
+  	ADD UNIQUE KEY `matricula` (`matricula`);
